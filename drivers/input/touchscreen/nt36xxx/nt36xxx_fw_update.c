@@ -987,9 +987,9 @@ void Boot_Update_Firmware(struct work_struct *work)
 
 	mutex_lock(&ts->lock);
 
-#ifdef CONFIG_TOUCHSCREEN_NT36XXX_ESD_PROTECT
+#if NVT_TOUCH_ESD_PROTECT
 	nvt_esd_check_enable(false);
-#endif /* ifdef CONFIG_TOUCHSCREEN_NT36XXX_ESD_PROTECT */
+#endif /* #if NVT_TOUCH_ESD_PROTECT */
 
 	nvt_sw_reset_idle();
 
